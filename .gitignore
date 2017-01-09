@@ -1,5 +1,7 @@
 # django exoadmin stuff
 db.sqlite3
+# temp
+*/migrations/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
