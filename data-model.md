@@ -18,6 +18,7 @@ buit-in
 extends user
 
 requires that first name, last name and email is valid
+
 requires Location app
 
 - `user`: link to user
