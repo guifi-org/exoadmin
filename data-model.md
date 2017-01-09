@@ -20,11 +20,11 @@ extends user
 requires that first name, last name and email is valid
 requires Location app
 
-- `domicile`: (domicilio)
+- `user`: link to user
+- `address`: street address
 - `identity`: identity document
 - `place`
 - `postal_code`
-- `user`: link to user
 - `user_type`: type of person: individual / organization 
 
 # Subscriber data
