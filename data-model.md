@@ -1,3 +1,5 @@
+Note: *default type is string*
+
 # User data
 
 buit-in
@@ -10,23 +12,23 @@ buit-in
 
 # Location
 
-- Municipality
-- Place
+- Municipality that contains `municipality`
+- Place that contains `place` and a foreign key to Municipality
 
 # Identified
 
-extends user
+extends User
 
 requires that first name, last name and email is valid
 
-requires Location app
+requires Location
 
-- `user`: link to user
+- `user`: link to User
 - `address`: street address
 - `identity`: identity document
-- `place`
+- `place`: links to Location
 - `postal_code`
-- `user_type`: type of person: individual / organization 
+- [choice] `user_type`: type of person: individual / organization 
 
 # Subscriber data
 
