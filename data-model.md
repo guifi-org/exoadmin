@@ -19,7 +19,7 @@ buit-in
 
 extends User
 
-requires that first name, last name and email is valid
+TODO: requires that first name, last name and email is valid
 
 requires Location
 
