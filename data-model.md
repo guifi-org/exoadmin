@@ -49,6 +49,7 @@ extends identified
     - [list] `others`: other members, able to add new custom ones. associated with particular user
 - ? password storage goes here?
 
+# End of average clarity
 
 # Activity data
 
