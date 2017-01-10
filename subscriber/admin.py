@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from . import models
+
+#admin.site.register(models.Subscriber)
+
+@admin.register(models.Subscriber)
+class SubscriberAdmin(admin.ModelAdmin):
+    list_display = ('identified', 'active_subs', 'org_member')
+    list_filter = ('active_subs', 'org_member')
