@@ -2,7 +2,11 @@ from django.db import models
 from django.utils.translation import gettext as _
 
 class Municipality(models.Model):
-    name = models.CharField(_("name"), max_length=50, unique=True)
+    name = models.CharField(
+            _("name"),
+            max_length=50,
+            unique=True
+    )
 
     class Meta:
         verbose_name = _("Municipality")
@@ -13,8 +17,18 @@ class Municipality(models.Model):
 
 # in spanish Población
 class Place(models.Model):
-    municipality = models.ForeignKey(Municipality, verbose_name=_("Municipality"), on_delete=models.CASCADE)
-    name = models.CharField(_("name"), max_length=50, unique=True)
+
+    municipality = models.ForeignKey(
+            Municipality,
+            verbose_name=_("Municipality"),
+            on_delete=models.CASCADE
+    )
+
+    name = models.CharField(
+            _("name"),
+            max_length=50,
+            unique=True
+    )
 
     class Meta:
         verbose_name = _("Place")
