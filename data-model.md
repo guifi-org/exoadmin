@@ -34,9 +34,10 @@ requires Location
 
 extends identified
 
+- [boolean] is subscription active? (is redundant, but helps to do a quick filter)
 - `user`: link to Identified user
 - [boolean] `org_member`: distinguishes between a organization member or just a subscriber/client
-- [list of pairs of] `startsubs` and `endsubs`: list of start and end
+- [list of pairs of] `start_subs` and `end_subs`: list of start and end
 
 # Organization data
 
