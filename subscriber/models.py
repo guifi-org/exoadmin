@@ -4,6 +4,20 @@ from django.utils.translation import gettext as _
 
 import datetime
 
+class Service(models.Model):
+
+    name = models.CharField(
+        _("name"),
+        max_length=50,
+        unique=True
+    )
+    class Meta:
+        verbose_name = _("Service")
+        verbose_name_plural = _("Services")
+
+    def __str__(self):
+        return self.name
+
 class Subscriber(models.Model):
 
     active_subs = models.BooleanField(
@@ -20,13 +34,19 @@ class Subscriber(models.Model):
         on_delete=models.CASCADE
     )
 
-    org_member = models.BooleanField(
-        _('Organization Member'),
-        default=True,
-        help_text=_(
-            'True if this user becomes member/partner with this '
-            'subscription of the organization. False if is just a client'
-        ),
+#    org_member = models.BooleanField(
+#        _('Organization Member'),
+#        default=True,
+#        help_text=_(
+#            'True if this user becomes member/partner with this '
+#            'subscription of the organization. False if is just a client'
+#        ),
+#    )
+
+    service = models.ForeignKey(
+            Service,
+            verbose_name=_("Service"),
+            on_delete=models.CASCADE
     )
 
     # Dates as a list
