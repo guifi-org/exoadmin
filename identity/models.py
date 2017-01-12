@@ -22,7 +22,6 @@ class Identity(models.Model):
             help_text=_("Identity Document; the number and/or text that verifies you"),
             max_length=20,
             unique=True,
-            primary_key=True,
     )
 
     place = models.ForeignKey(
