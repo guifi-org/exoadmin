@@ -37,28 +37,29 @@ class Subscriber(models.Model):
     )
 
     service = models.ForeignKey(
-            Service,
-            verbose_name=_("Service"),
-            on_delete=models.CASCADE
+        Service,
+        verbose_name=_("Service"),
+        on_delete=models.CASCADE
     )
 
     # TODO: check on data entry that start_subs should be greater than end_subs
     # src http://stackoverflow.com/questions/2029295/django-datefield-default-options/2030142#2030142
     start_subs = models.DateField(
-            _('Start subscription date'),
-            default=datetime.date.today
+        _('Start subscription date'),
+        default=datetime.date.today
     )
 
     # optional date
     # src http://stackoverflow.com/questions/11351619/how-to-make-djangos-datetimefield-optional/11351661#11351661
     end_subs = models.DateField(
-            null=True,
-            blank=True
+        null=True,
+        blank=True
     )
 
     notes = models.TextField(
         _('Notes'),
         max_length=300,
+        blank=True,
     )
 
     class Meta:
