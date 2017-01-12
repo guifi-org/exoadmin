@@ -33,6 +33,7 @@ requires Location
 # Service
 
 - `name`: name of service
+- `description`: description of service
 
 # Subscriber data
 
@@ -45,6 +46,23 @@ info: user can have different subscriptions even of the same type. Manager shoul
 - [date] `start_subs`: start subscription of service
 - [date] `end_subs`: end subscription of service (optional)
 - `notes`: add notes related to this service-user
+
+# sandbox start here
+
+# ? Action -> ledger?
+
+- `name`: name of action
+
+# ? Activity -> ledger?
+
+- `title`
+- ? user or users?
+- [date] `date`:
+- [number] hours
+- `notes`: add notes related to hours
+- [number] money
+- `notes`: add notes related to money
+- map to project?
 
 # Organization data
 
@@ -59,9 +77,6 @@ info: user can have different subscriptions even of the same type. Manager shoul
 
 # End of average clarity
 
-# Activity data
-
-- Lists of activities
 
 # ? Compensation activity (idea)
 
