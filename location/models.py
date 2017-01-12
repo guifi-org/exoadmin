@@ -11,7 +11,7 @@ class Municipality(models.Model):
 
     class Meta:
         verbose_name = _("Municipality")
-        verbose_name_plural = _("Municipality")
+        verbose_name_plural = _("Municipalities")
 
     def __str__(self):
         return self.name
