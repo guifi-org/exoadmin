@@ -30,14 +30,20 @@ requires Location
 - `postal_code`
 - [choice] `user_type`: type of person: individual / organization 
 
+# Service
+
+- `name`: name of service
+
 # Subscriber data
 
 extends identified
 
 - [boolean] is subscription active? (is redundant, but helps to do a quick filter)
 - `user`: link to Identified user
-- [boolean] `org_member`: distinguishes between a organization member or just a subscriber/client
-- [list of pairs of] `start_subs` and `end_subs`: list of start and end
+- `service`: link to Service
+- [date] `start_subs`: start subscription of service
+- [date] `end_subs`: end subscription of service (optional)
+- `notes`: add notes related to this service-user
 
 # Organization data
 
