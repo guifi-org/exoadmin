@@ -13,6 +13,13 @@ class Service(models.Model):
         max_length=50,
         unique=True
     )
+
+    description = models.TextField(
+        _('Description'),
+        max_length=300,
+        blank=True,
+    )
+
     class Meta:
         verbose_name = _("Service")
         verbose_name_plural = _("Services")
