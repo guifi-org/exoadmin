@@ -30,7 +30,7 @@ class Subscriber(models.Model):
         ),
     )
 
-    identity = models.OneToOneField(
+    identity = models.ForeignKey(
         'identity.Identity',
         verbose_name=_("Identity"),
         on_delete=models.CASCADE

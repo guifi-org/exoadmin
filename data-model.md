@@ -37,6 +37,7 @@ requires Location
 # Subscriber data
 
 extends identified
+info: user can have different subscriptions even of the same type. Manager should check that it makes sense
 
 - [boolean] is subscription active? (is redundant, but helps to do a quick filter)
 - `user`: link to Identified user
