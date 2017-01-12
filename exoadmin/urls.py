@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+admin.site.site_header = 'eXO Admin'
+admin.site.site_title = 'eXO Admin Application'
+admin.site.index_title = 'Data Management'
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
