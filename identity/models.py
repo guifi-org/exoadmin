@@ -3,7 +3,7 @@ from django.db import models
 from django.utils.translation import gettext as _
 from django.contrib.auth.models import User
 
-class Identified(models.Model):
+class Identity(models.Model):
 
     # src https://docs.djangoproject.com/en/1.10/topics/auth/customizing/#extending-the-existing-user-model
     user = models.OneToOneField(
@@ -17,11 +17,12 @@ class Identified(models.Model):
             max_length=50
     )
 
-    # approximation; fix it to be more precise
     identity = models.CharField(
-            _("Identity"),
-            max_length=9,
-            unique=True
+            _("ID"),
+            help_text=_("Identity Document; the number and/or text that verifies you"),
+            max_length=20,
+            unique=True,
+            primary_key=True,
     )
 
     place = models.ForeignKey(
@@ -51,8 +52,8 @@ class Identified(models.Model):
     )
 
     class Meta:
-        verbose_name = _("Identified")
-        verbose_name_plural = _("Identified")
+        verbose_name = _("Identity")
+        verbose_name_plural = _("Identities")
 
     def __str__(self):
         return self.user.username

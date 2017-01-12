@@ -6,6 +6,8 @@ import datetime
 
 class Service(models.Model):
 
+    # example of service: membership
+
     name = models.CharField(
         _("name"),
         max_length=50,
@@ -20,36 +22,25 @@ class Service(models.Model):
 
 class Subscriber(models.Model):
 
-    active_subs = models.BooleanField(
-        _('Active subscription'),
+    active = models.BooleanField(
+        _('Active'),
         default=True,
         help_text=_(
-            'The subscription is active; redundant, but useful to do a quick filter'
+            'The subscription is active'
         ),
     )
 
-    identified = models.OneToOneField(
-        'identified.Identified',
-        verbose_name=_("Identified user"),
+    identity = models.OneToOneField(
+        'identity.Identity',
+        verbose_name=_("Identity"),
         on_delete=models.CASCADE
     )
-
-#    org_member = models.BooleanField(
-#        _('Organization Member'),
-#        default=True,
-#        help_text=_(
-#            'True if this user becomes member/partner with this '
-#            'subscription of the organization. False if is just a client'
-#        ),
-#    )
 
     service = models.ForeignKey(
             Service,
             verbose_name=_("Service"),
             on_delete=models.CASCADE
     )
-
-    # Dates as a list
 
     # TODO: check on data entry that start_subs should be greater than end_subs
     # src http://stackoverflow.com/questions/2029295/django-datefield-default-options/2030142#2030142
@@ -64,10 +55,15 @@ class Subscriber(models.Model):
             null=True,
             blank=True
     )
-    
+
+    notes = models.TextField(
+        _('Notes'),
+        max_length=300,
+    )
+
     class Meta:
         verbose_name = _("Subscriber")
         verbose_name_plural = _("Subscribers")
 
     def __str__(self):
-        return self.identified.user.username
+        return self.identity.user.username

@@ -41,9 +41,8 @@ INSTALLED_APPS = [
     'django_extensions',
 
     'location',
-    'identified',
-    'organization',
-    'subscriber',
+    'identity',
+    'subscription',
 ]
 
 MIDDLEWARE = [
