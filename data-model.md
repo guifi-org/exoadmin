@@ -29,6 +29,8 @@ requires Location
 - `place`: links to Location
 - `postal_code`
 - [choice] `user_type`: type of person: individual / organization 
+- `payment_means`: different ways to pay
+- `IBAN`: bank account number in case that payment means is direct debit
 
 # Service
 
