@@ -63,6 +63,18 @@ class Subscriber(models.Model):
         blank=True
     )
 
+    interfaces = models.ManyToManyField(
+                     'interface.Interface',
+                     verbose_name = _('Interfaces'),
+#                     on_delete=models.CASCADE,
+
+#                     'self',
+#                     blank=True,
+#                     through='Composition',
+#                     symmetrical=False,
+#                     related_name='related_to'
+                 )
+
     notes = models.TextField(
         _('Notes'),
         max_length=300,

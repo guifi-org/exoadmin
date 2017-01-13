@@ -45,9 +45,25 @@ info: user can have different subscriptions even of the same type. Manager shoul
 - [boolean] is subscription active? (is redundant, but helps to do a quick filter)
 - `user`: link to Identified user
 - `service`: link to Service
+- `interface`: list of Interfaces
 - [date] `start_subs`: start subscription of service
 - [date] `end_subs`: end subscription of service (optional)
 - `notes`: add notes related to this service-user
+
+# IP
+
+- [ipv4/ipv6 field] address (IPv4, IPv6)
+
+# Interface protocol
+
+- `name`: name of the interface protocol
+
+# Interface
+
+- `IP`: link to IP
+- `proto`: link to interface protocol
+- `local address`
+- `remote address`
 
 # sandbox start here
 
@@ -92,12 +108,6 @@ usuaris participants
 # Professional data
 
 - ? invoicing data
-
-# IPs
-
-- id - assigned to (circuit)
-- address
-- type: (IPv4, IPv6)
 
 # Tasks
 
