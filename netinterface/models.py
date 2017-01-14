@@ -2,7 +2,7 @@ from django.db import models
 
 from django.utils.translation import gettext as _
 
-class Interface_protocol(models.Model):
+class Network_interface_protocol(models.Model):
     name = models.CharField(
             _('name'),
             max_length=20,
@@ -16,23 +16,23 @@ class Interface_protocol(models.Model):
     )
 
     class Meta:
-        verbose_name = _('Interface protocol')
-        verbose_name_plural = _('Interface protocols')
+        verbose_name = _('Network interface protocol')
+        verbose_name_plural = _('Network interface protocols')
 
     def __str__(self):
         return self.name
 
-class Interface(models.Model):
+class Network_interface(models.Model):
 
     ip = models.ForeignKey(
             'netresource.IP',
-            verbose_name=_('IP'),
+            verbose_name=_('IP address'),
             on_delete=models.CASCADE
         )
 
-    interface_protocol = models.ForeignKey(
-            Interface_protocol,
-            verbose_name=_('Interface protocol'),
+    network_interface_protocol = models.ForeignKey(
+            Network_interface_protocol,
+            verbose_name=_('Network interface protocol'),
             on_delete=models.CASCADE
         )
 
@@ -56,8 +56,8 @@ class Interface(models.Model):
     # extra parameters for other interface protocols go here
 
     class Meta:
-        verbose_name = _('Interface')
-        verbose_name_plural = _('Interfaces')
+        verbose_name = _('Network interface')
+        verbose_name_plural = _('Network interfaces')
 
     def __str__(self):
-        return "{} {}".format(self.interface_protocol, self.ip)
+        return "{} {}".format(self.network_interface_protocol, self.ip)

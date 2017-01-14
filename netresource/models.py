@@ -4,7 +4,7 @@ from django.utils.translation import gettext as _
 
 class IP(models.Model):
     ip = models.GenericIPAddressField(
-            _('IP Address'),
+            _('IP address'),
             help_text=_('Can be IPv4 or IPv6'),
          )
 

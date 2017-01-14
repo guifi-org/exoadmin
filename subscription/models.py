@@ -64,8 +64,8 @@ class Subscriber(models.Model):
     )
 
     interfaces = models.ManyToManyField(
-                     'interface.Interface',
-                     verbose_name = _('Interfaces'),
+                     'netinterface.Network_interface',
+                     verbose_name = _('Network Interfaces'),
 #                     on_delete=models.CASCADE,
 
 #                     'self',
