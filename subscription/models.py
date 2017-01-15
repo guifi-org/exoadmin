@@ -66,6 +66,7 @@ class Subscriber(models.Model):
     interfaces = models.ManyToManyField(
         'netinterface.Network_interface',
         verbose_name = _('Network Interfaces'),
+        blank=True,
     )
 
     notes = models.TextField(
