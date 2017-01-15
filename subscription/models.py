@@ -9,8 +9,8 @@ class Service(models.Model):
     # example of service: membership
 
     name = models.CharField(
-        _("name"),
-        max_length=50,
+        _('name'),
+        max_length=20,
         unique=True
     )
 
@@ -21,8 +21,8 @@ class Service(models.Model):
     )
 
     class Meta:
-        verbose_name = _("Service")
-        verbose_name_plural = _("Services")
+        verbose_name = _('Service')
+        verbose_name_plural = _('Services')
 
     def __str__(self):
         return self.name
@@ -39,13 +39,13 @@ class Subscriber(models.Model):
 
     identity = models.ForeignKey(
         'identity.Identity',
-        verbose_name=_("Identity"),
+        verbose_name=_('Identity'),
         on_delete=models.CASCADE
     )
 
     service = models.ForeignKey(
         Service,
-        verbose_name=_("Service"),
+        verbose_name=_('Service'),
         on_delete=models.CASCADE
     )
 
@@ -53,7 +53,7 @@ class Subscriber(models.Model):
     # src http://stackoverflow.com/questions/2029295/django-datefield-default-options/2030142#2030142
     start_subs = models.DateField(
         _('Start subscription date'),
-        default=datetime.date.today
+        default=datetime.date.today,
     )
 
     # optional date
@@ -64,16 +64,9 @@ class Subscriber(models.Model):
     )
 
     interfaces = models.ManyToManyField(
-                     'netinterface.Network_interface',
-                     verbose_name = _('Network Interfaces'),
-#                     on_delete=models.CASCADE,
-
-#                     'self',
-#                     blank=True,
-#                     through='Composition',
-#                     symmetrical=False,
-#                     related_name='related_to'
-                 )
+        'netinterface.Network_interface',
+        verbose_name = _('Network Interfaces'),
+    )
 
     notes = models.TextField(
         _('Notes'),
@@ -82,8 +75,8 @@ class Subscriber(models.Model):
     )
 
     class Meta:
-        verbose_name = _("Subscriber")
-        verbose_name_plural = _("Subscribers")
+        verbose_name = _('Subscriber')
+        verbose_name_plural = _('Subscribers')
 
     def __str__(self):
         return self.identity.user.username
