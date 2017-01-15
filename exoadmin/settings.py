@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'subscription',
     'netresource',
     'netinterface',
+    'responsability',
+    'activity',
 ]
 
 MIDDLEWARE = [
