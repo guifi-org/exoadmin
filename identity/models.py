@@ -82,4 +82,4 @@ class Identity(models.Model):
         verbose_name_plural = _('Identities')
 
     def __str__(self):
-        return self.user.username
+        return "{} ({} {})".format(self.user.username, self.user.first_name, self.user.last_name)

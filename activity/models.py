@@ -22,6 +22,9 @@ class Type_of_activity(models.Model):
         verbose_name = _('Type of activity')
         verbose_name_plural = _('Type of activities')
 
+    def __str__(self):
+        return self.name
+
 class Activity(models.Model):
 
     accounted = models.BooleanField(
