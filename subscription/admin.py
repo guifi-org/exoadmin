@@ -8,5 +8,5 @@ class ServiceAdmin(admin.ModelAdmin):
 
 @admin.register(models.Subscriber)
 class SubscriberAdmin(admin.ModelAdmin):
-    list_display = ('identity', 'service', 'active')
+    list_display = ('identity', 'service', 'active', 'end_date')
     list_filter = ('active', 'service')

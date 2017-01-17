@@ -51,14 +51,15 @@ class Subscriber(models.Model):
 
     # TODO: check on data entry that start_subs should be greater than end_subs
     # src http://stackoverflow.com/questions/2029295/django-datefield-default-options/2030142#2030142
-    start_subs = models.DateField(
+    start_date = models.DateField(
         _('Start subscription date'),
         default=datetime.date.today,
     )
 
     # optional date
     # src http://stackoverflow.com/questions/11351619/how-to-make-djangos-datetimefield-optional/11351661#11351661
-    end_subs = models.DateField(
+    end_date = models.DateField(
+        _('End subscription date'),
         null=True,
         blank=True
     )

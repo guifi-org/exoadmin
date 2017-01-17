@@ -80,12 +80,12 @@ class Activity(models.Model):
         blank=True,
     )
 
-    start_activity = models.DateField(
+    start_date = models.DateField(
         ('Start activity'),
         default=datetime.date.today,
     )
 
-    end_activity = models.DateField(
+    end_date = models.DateField(
         ('End activity'),
         null=True,
         blank=True,

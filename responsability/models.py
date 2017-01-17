@@ -52,17 +52,23 @@ class Responsability(models.Model):
         blank=True,
     )
 
+    notes = models.TextField (
+        _('Notes'),
+        max_length=300,
+        blank=True,
+    )
+
     identities = models.ManyToManyField(
         'identity.Identity',
         verbose_name = _('Identities'),
     )
 
-    start_subs = models.DateField(
+    start_date = models.DateField(
         _('Start responsability date'),
         default=datetime.date.today,
     )
     
-    end_subs = models.DateField(
+    end_date = models.DateField(
         _('End responsability date'),
         null=True,
         blank=True

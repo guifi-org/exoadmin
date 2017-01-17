@@ -8,4 +8,5 @@ class Type_of_responsability_Admin(admin.ModelAdmin):
 
 @admin.register(models.Responsability)
 class ResponsabilityAdmin(admin.ModelAdmin):
+    list_display = ('title', 'end_date')
     filter_horizontal = ('identities',)
