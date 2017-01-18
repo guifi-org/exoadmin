@@ -9,7 +9,7 @@ class Type_of_activity(models.Model):
 
     name = models.CharField (
         _('Name'),
-        max_length=20,
+        max_length=50,
     )
 
     description = models.TextField (
@@ -35,9 +35,15 @@ class Activity(models.Model):
         ),
     )
 
+    type_of_activity = models.ForeignKey(
+        'Type_of_activity',
+        verbose_name=_('Type of activity'),
+        on_delete=models.CASCADE,
+    )
+
     title = models.CharField (
         _('Title'),
-        max_length=20,
+        max_length=50,
     )
 
     description = models.TextField (
@@ -49,12 +55,6 @@ class Activity(models.Model):
     identities = models.ManyToManyField(
         'identity.Identity',
         verbose_name = _('Identities'),
-    )
-
-    type_of_activity = models.ForeignKey(
-        'Type_of_activity',
-        verbose_name=_('Type of activity'),
-        on_delete=models.CASCADE,
     )
 
     time = models.FloatField (
