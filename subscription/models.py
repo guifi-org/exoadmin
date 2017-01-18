@@ -10,7 +10,7 @@ class Service(models.Model):
 
     name = models.CharField(
         _('name'),
-        max_length=20,
+        max_length=50,
         unique=True
     )
 
@@ -64,10 +64,11 @@ class Subscriber(models.Model):
         blank=True
     )
 
-    interfaces = models.ManyToManyField(
+    interfaces = models.ForeignKey(
         'netinterface.Network_interface',
         verbose_name = _('Network Interfaces'),
         blank=True,
+        null=True,
     )
 
     notes = models.TextField(

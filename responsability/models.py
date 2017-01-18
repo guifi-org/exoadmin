@@ -9,7 +9,7 @@ class Type_of_responsability(models.Model):
 
     name = models.CharField (
         _('Name'),
-        max_length=20,
+        max_length=50,
     )
 
     description = models.TextField (
