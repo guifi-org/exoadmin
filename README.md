@@ -8,8 +8,17 @@ cd exoadmin
 virtualenv env
 source env/bin/activate
 pip3 install django pyparsing pydot django-extensions
-# TODO: add a fake database
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
+python3 manage.py loaddata fixture_types.json
+python3 manage.py makemigrations
+python3 manage.py migrate
+echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', '', 'admin')" | python manage.py shell
+python3 manage.py runserver
 ```
+
+if you want to preserve new data, I recommend:
+
+`python3 manage.py dumpdata --exclude=contenttypes --exclude=auth --exclude=sessions --exclude=admin --indent 4 --natural-foreign --natural-primary > new_fixture.json`
+
+# Fixture
+
+
