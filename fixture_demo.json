@@ -1,0 +1,230 @@
+[
+{                                                                                                   
+    "model": "auth.user",
+    "pk": 11,
+    "fields": {                                                                                     
+        "password": "pbkdf2_sha256$30000$2JQKOFMUNtUy$OQIKWZDJS1e8lIToEYkNi/sRUAUqX+S1ulirkel1sl4=",
+        "last_login": "2015-01-18T01:08:17.883Z",
+        "is_superuser": false,
+        "username": "abel",
+        "first_name": "Abel",
+        "last_name": "Pérez",
+        "email": "abel.perez@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2010-01-18T01:07:54.614Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{                                                                                                   
+    "model": "auth.user",
+    "pk": 12,
+    "fields": {                                                                                     
+        "password": "pbkdf2_sha256$30000$2JQKOFMUNtUy$OQIKWZDJS1e8lIToEYkNi/sRUAUqX+S1ulirkel1sl4=",
+        "last_login": "2016-01-18T01:08:17.883Z",
+        "is_superuser": false,
+        "username": "laura",
+        "first_name": "Laura",
+        "last_name": "González",
+        "email": "laura.gonzalez@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2010-01-18T01:07:54.614Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{                                                                                                   
+    "model": "auth.user",
+    "pk": 13,
+    "fields": {                                                                                     
+        "password": "pbkdf2_sha256$30000$2JQKOFMUNtUy$OQIKWZDJS1e8lIToEYkNi/sRUAUqX+S1ulirkel1sl4=",
+        "last_login": "2014-01-18T01:08:17.883Z",
+        "is_superuser": false,
+        "username": "acmecorp",
+        "first_name": "ACME Corporation",
+        "last_name": "",
+        "email": "acmecorp@example.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2010-01-18T01:07:54.614Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+
+{
+    "model": "identity.identity",
+    "pk": 1,
+    "fields": {
+        "user": [
+            "abel"
+        ],
+        "address": "C/Deu invents n. 23",
+        "identity": "12345678A",
+        "place": 1,
+        "postal_code": "12345",
+        "user_type": "Individual",
+        "payment_means": "Direct Debit",
+        "iban": ""
+    }
+},
+{
+    "model": "identity.identity",
+    "pk": 2,
+    "fields": {
+        "user": [
+            "laura"
+        ],
+        "address": "C/Poetas incandescentes n. 15 Esc. B 1ero 4rta",
+        "identity": "87654321L",
+        "place": 1,
+        "postal_code": "87654321",
+        "user_type": "Individual",
+        "payment_means": "Cash",
+        "iban": ""
+    }
+},
+{
+    "model": "identity.identity",
+    "pk": 3,
+    "fields": {
+        "user": [
+            "acmecorp"
+        ],
+        "address": "C/Emprenedoria n.90 Entrada principal",
+        "identity": "B-123456789",
+        "place": 1,
+        "postal_code": "372819",
+        "user_type": "Organization",
+        "payment_means": "Direct Debit",
+        "iban": ""
+    }
+},
+{
+    "model": "subscription.subscriber",
+    "pk": 1,
+    "fields": {
+        "active": true,
+        "identity": 1,
+        "service": 1,
+        "start_date": "2016-09-06",
+        "end_date": null,
+        "interfaces": null,
+        "notes": ""
+    }
+},
+{
+    "model": "subscription.subscriber",
+    "pk": 2,
+    "fields": {
+        "active": true,
+        "identity": 2,
+        "service": 2,
+        "start_date": "2015-08-15",
+        "end_date": null,
+        "interfaces": 1,
+        "notes": ""
+    }
+},
+{
+    "model": "subscription.subscriber",
+    "pk": 3,
+    "fields": {
+        "active": true,
+        "identity": 3,
+        "service": 2,
+        "start_date": "2017-01-18",
+        "end_date": null,
+        "interfaces": 2,
+        "notes": ""
+    }
+},
+{
+    "model": "netresource.ip",
+    "pk": 1,
+    "fields": {
+        "ip": "10.0.1.1"
+    }
+},
+{
+    "model": "netresource.ip",
+    "pk": 2,
+    "fields": {
+        "ip": "10.0.2.1"
+    }
+},
+{
+    "model": "netinterface.network_interface",
+    "pk": 1,
+    "fields": {
+        "ip": 1,
+        "network_interface_protocol": 1,
+        "local_address": null,
+        "remote_address": null
+    }
+},
+{
+    "model": "netinterface.network_interface",
+    "pk": 2,
+    "fields": {
+        "ip": 2,
+        "network_interface_protocol": 3,
+        "local_address": null,
+        "remote_address": null
+    }
+},
+{
+    "model": "responsability.responsability",
+    "pk": 1,
+    "fields": {
+        "active": true,
+        "type_of_responsability": 1,
+        "title": "President 1",
+        "description": "",
+        "notes": "",
+        "start_date": "2014-01-18",
+        "end_date": null,
+        "identities": [
+            2
+        ]
+    }
+},
+{
+    "model": "responsability.responsability",
+    "pk": 2,
+    "fields": {
+        "active": true,
+        "type_of_responsability": 9,
+        "title": "Desplegament IPv6",
+        "description": "",
+        "notes": "",
+        "start_date": "2016-01-18",
+        "end_date": null,
+        "identities": [
+            2
+        ]
+    }
+},
+{
+    "model": "activity.activity",
+    "pk": 1,
+    "fields": {
+        "accounted": true,
+        "type_of_activity": 4,
+        "title": "Instal\u00b7laci\u00f3 a Centre Esportiu",
+        "description": "",
+        "time": 60.0,
+        "time_notes": "10: disseny\r\n40: implementaci\u00f3\r\n10: verificaci\u00f3",
+        "money": 6000.0,
+        "money_notes": "La factura est\u00e0 a l'adre\u00e7a https://nextcloud.exo.cat/file/234892.pdf",
+        "start_date": "2017-01-18",
+        "end_date": null,
+        "identities": [
+            1,
+            3
+        ]
+    }
+}
+]
