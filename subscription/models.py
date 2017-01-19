@@ -64,12 +64,12 @@ class Subscriber(models.Model):
         blank=True
     )
 
-    interfaces = models.ForeignKey(
-        'netinterface.Network_interface',
-        verbose_name = _('Network Interfaces'),
-        blank=True,
-        null=True,
-    )
+    #interfaces = models.ForeignKey(
+    #    'netinterface.Network_interface',
+    #    verbose_name = _('Network Interfaces'),
+    #    blank=True,
+    #    null=True,
+    #)
 
     notes = models.TextField(
         _('Notes'),
@@ -82,4 +82,5 @@ class Subscriber(models.Model):
         verbose_name_plural = _('Subscribers')
 
     def __str__(self):
-        return self.identity.user.username
+        return "{} - {}".format(self.identity, self.service)
+        #return self.identity.user.username

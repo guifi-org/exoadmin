@@ -4,15 +4,15 @@ from django.utils.translation import gettext as _
 
 class Network_interface_protocol(models.Model):
     name = models.CharField(
-            _('name'),
-            max_length=20,
-            unique=True
+        _('name'),
+        max_length=20,
+        unique=True
     )
 
     description = models.TextField(
-            _('Description'),
-            max_length=300,
-            blank=True,
+        _('Description'),
+        max_length=300,
+        blank=True,
     )
 
     class Meta:
@@ -24,34 +24,46 @@ class Network_interface_protocol(models.Model):
 
 class Network_interface(models.Model):
 
+    subscriber = models.ForeignKey(
+        'subscription.Subscriber',
+        verbose_name = _('Subscriber'),
+    )
+
     ip = models.ForeignKey(
-            'netresource.IP',
-            verbose_name=_('IP address'),
-            on_delete=models.CASCADE
-        )
+        'netresource.IP',
+        verbose_name=_('IP address'),
+        on_delete=models.CASCADE
+    )
 
     network_interface_protocol = models.ForeignKey(
-            Network_interface_protocol,
-            verbose_name=_('Network interface protocol'),
-            on_delete=models.CASCADE
-        )
+        Network_interface_protocol,
+        verbose_name=_('Network interface protocol'),
+        on_delete=models.CASCADE
+    )
 
     # Why null and blank true? ->
     # http://stackoverflow.com/questions/8609192/differentiate-null-true-blank-true-in-django
 
+    guifi_address = models.GenericIPAddressField(
+        _('Guifi 10.x.x.x'),
+        help_text=_('This is for IPIP or GRE'),
+        null=True,
+        blank=True,
+    )
+
     local_address = models.GenericIPAddressField(
-                        _('Local IP Address'),
-                        help_text=_('Can be IPv4 or IPv6'),
-                        null=True,
-                        blank=True,
-                    )
+        _('Local 192.x.x.x'),
+        help_text=_('This is for IPIP or GRE'),
+        null=True,
+        blank=True,
+    )
 
     remote_address = models.GenericIPAddressField(
-                        _('Remote IP Address'),
-                        help_text=_('Can be IPv4 or IPv6'),
-                        null=True,
-                        blank=True
-                     )
+        _('Remote 192.x.x.x'),
+        help_text=_('This is for IPIP or GRE'),
+        null=True,
+        blank=True
+    )
 
     # extra parameters for other interface protocols go here
 
