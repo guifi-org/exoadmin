@@ -1,7 +1,8 @@
 # Requirements
 
+Assuming Debian 8 Jessie
 ```
-apt-get install --no-install-recommends python3-pip
+apt-get install --no-install-recommends python3-pip graphviz
 pip3 install virtualenv
 git clone https://github.com/pedro-nonfree/exoadmin
 cd exoadmin
@@ -20,4 +21,10 @@ if you want to preserve new data, I recommend:
 
 ```
 python3 manage.py dumpdata --exclude=contenttypes --exclude=auth --exclude=sessions --exclude=admin --indent 4 --natural-foreign --natural-primary > new_fixture.json
+```
+
+regenerate data model diagram:
+
+```
+python3 manage.py graph_models -a -g -o data_model_diagram.png
 ```

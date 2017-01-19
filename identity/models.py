@@ -17,6 +17,7 @@ class Identity(models.Model):
         max_length=50
     )
 
+    # in spain this is NIF for individual and CIF for organization
     identity = models.CharField(
         _('ID'),
         help_text=_('Identity Document; the number and/or text that verifies you'),
