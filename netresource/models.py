@@ -8,9 +8,19 @@ class IP(models.Model):
             help_text=_('Can be IPv4 or IPv6'),
          )
 
+    cidr = models.PositiveIntegerField(
+            _('CIDR'),
+            help_text=_('Put a number if you want more than one IP'),
+            null=True,
+            blank=True,
+         )
+
     class Meta:
         verbose_name = 'IP'
         verbose_name_plural = 'IPs'
 
     def __str__(self):
-        return self.ip
+        if (self.cidr):
+            return "{}/{}".format(self.ip, self.cidr)
+        else: 
+            return "{}".format(self.ip)
