@@ -1,4 +1,4 @@
-# Requirements
+# Installation
 
 Assuming Debian 8 Jessie
 ```
@@ -28,3 +28,7 @@ regenerate data model diagram:
 ```
 python3 manage.py graph_models -a -g -o data_model_diagram.png
 ```
+
+# Known bad practices
+
+- Avoid including ForeignKey fields in `__str__` or `__unicode__` methods for other Models. src http://www.joshuakehn.com/2014/8/28/djangos-admin-in-production.html -> Related Lookups
