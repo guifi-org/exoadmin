@@ -1,3 +1,9 @@
+# Status
+
+Warning this django admin web application is under heavy development.
+
+At the moment app migrations will not be uploaded: I destroy them regularly. Heavy changes on data model can happen, which would be lot of pain if you use this application in production. At your own risk.
+
 # Installation
 
 Assuming Debian 8 Jessie
