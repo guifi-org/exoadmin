@@ -36,4 +36,4 @@ class Place(models.Model):
         verbose_name_plural = _('Places')
 
     def __str__(self):
-        return self.name
+        return '{}, {}'.format(self.name, self.municipality)
