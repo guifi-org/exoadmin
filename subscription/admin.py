@@ -10,7 +10,7 @@ from netinterface.models import Network_interface
 class ServiceAdmin(admin.ModelAdmin):
     list_display = ('name', 'description')
 
-class NetinterfaceInline(admin.TabularInline):
+class NetinterfaceInline(admin.StackedInline):
     model = Network_interface
     extra = 0
 
