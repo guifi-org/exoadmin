@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'location',
     'identity',
     'subscription',
-    'netresource',
+    'inventory',
     'netinterface',
     'responsability',
     'activity',
