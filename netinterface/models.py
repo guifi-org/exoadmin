@@ -2,6 +2,12 @@ from django.db import models
 
 from django.utils.translation import gettext as _
 
+from django.core.exceptions import ValidationError
+
+from inventory.models import IP
+
+import ipaddress
+
 class Network_interface_protocol(models.Model):
     name = models.CharField(
         _('name'),
@@ -29,10 +35,11 @@ class Network_interface(models.Model):
         verbose_name = _('Subscriber'),
     )
 
-    ip = models.ForeignKey(
-        'netresource.IP',
-        verbose_name=_('IP address'),
-        on_delete=models.CASCADE
+    # ip assignment must be unique
+    ip = models.GenericIPAddressField(
+        _('IP address'),
+#        help_text=_('Assigned IP address to subscription'),
+        unique = True,
     )
 
     network_interface_protocol = models.ForeignKey(
@@ -73,3 +80,18 @@ class Network_interface(models.Model):
 
     def __str__(self):
         return "{} {}".format(self.network_interface_protocol, self.ip)
+
+    # check ip address (see ValidationError)
+    # [validation] src https://docs.djangoproject.com/en/1.10/ref/forms/validation/#cleaning-and-validating-fields-that-depend-on-each-other
+    def clean(self):
+        verified = False
+        # [evaluation] src https://docs.djangoproject.com/en/1.10/ref/models/querysets/#when-querysets-are-evaluated
+        for inventory_ip in IP.objects.all():
+            # [check ip in network] src http://stackoverflow.com/questions/819355/how-can-i-check-if-an-ip-is-in-a-network-in-python/1004527#1004527
+            # [no strict check] src https://docs.python.org/3/howto/ipaddress.html#defining-networks
+            if ipaddress.ip_address(self.ip) in ipaddress.ip_network(inventory_ip, strict=False):
+                verified = True
+                break
+        # src http://stackoverflow.com/questions/6117733/negation-in-python/6117762#6117762
+        if not verified:
+            raise ValidationError(_('IP does not belong to any existing Network or IP in Inventory'))
