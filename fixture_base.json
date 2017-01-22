@@ -191,5 +191,69 @@
         "name": "Visita prova de cobertura",
         "description": ""
     }
+},
+{
+    "model": "inventory.item_type",
+    "pk": 1,
+    "fields": {
+        "name": "Server",
+        "description": ""
+    }
+},
+{
+    "model": "inventory.item_type",
+    "pk": 2,
+    "fields": {
+        "name": "Router",
+        "description": ""
+    }
+},
+{
+    "model": "inventory.item_type",
+    "pk": 3,
+    "fields": {
+        "name": "Switch",
+        "description": ""
+    }
+},
+{
+    "model": "inventory.item_type",
+    "pk": 4,
+    "fields": {
+        "name": "Wifi",
+        "description": ""
+    }
+},
+{
+    "model": "inventory.item_status",
+    "pk": 1,
+    "fields": {
+        "name": "Idle",
+        "description": "Waiting to be used"
+    }
+},
+{
+    "model": "inventory.item_status",
+    "pk": 2,
+    "fields": {
+        "name": "Reserved",
+        "description": "Backup purposes"
+    }
+},
+{
+    "model": "inventory.item_status",
+    "pk": 3,
+    "fields": {
+        "name": "Testing",
+        "description": "Used in development"
+    }
+},
+{
+    "model": "inventory.item_status",
+    "pk": 4,
+    "fields": {
+        "name": "Working",
+        "description": "Used in production"
+    }
 }
 ]
