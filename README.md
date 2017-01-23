@@ -35,6 +35,7 @@ regenerate data model diagram:
 python3 manage.py graph_models -a -g -o data_model_diagram.png
 ```
 
-# Known bad practices
+# Known issues and bad practices
 
 - Avoid including ForeignKey fields in `__str__` or `__unicode__` methods for other Models. src http://www.joshuakehn.com/2014/8/28/djangos-admin-in-production.html -> Related Lookups
+- The django admin default theme is not responsive. I could not found a proper theme for django in its latest version `1.10.5`.
