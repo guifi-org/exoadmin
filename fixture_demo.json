@@ -157,7 +157,7 @@
     "model": "netinterface.network_interface",
     "pk": 1,
     "fields": {
-        "ip": 1,
+        "ip": "10.0.0.1",
 	"subscriber": 1,
         "network_interface_protocol": 1,
         "local_address": null,
@@ -168,7 +168,7 @@
     "model": "netinterface.network_interface",
     "pk": 2,
     "fields": {
-        "ip": 2,
+        "ip": "10.0.0.2",
 	"subscriber": 2,
         "network_interface_protocol": 3,
         "local_address": null,
