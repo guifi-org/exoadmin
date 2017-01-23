@@ -5,7 +5,7 @@ from django.utils.translation import gettext as _
 import datetime
 
 # role (president, treasurer), projects, equipment, tasks
-class Type_of_responsability(models.Model):
+class Responsability_type(models.Model):
 
     name = models.CharField (
         _('Name'),
@@ -19,8 +19,8 @@ class Type_of_responsability(models.Model):
     )
 
     class Meta:
-        verbose_name = _('Type of responsability')
-        verbose_name_plural = _('Type of responsabilities')
+        verbose_name = _('Responsability type')
+        verbose_name_plural = _('Responsability types')
 
     def __str__(self):
         return self.name
@@ -35,9 +35,9 @@ class Responsability(models.Model):
         ),
     )
 
-    type_of_responsability = models.ForeignKey(
-        'Type_of_responsability',
-        verbose_name=_('Type of responsability'),
+    responsability_type = models.ForeignKey(
+        'Responsability_type',
+        verbose_name=_('Responsability type'),
         on_delete=models.CASCADE,
     )
 
@@ -67,13 +67,13 @@ class Responsability(models.Model):
         _('Start responsability date'),
         default=datetime.date.today,
     )
-    
+
     end_date = models.DateField(
         _('End responsability date'),
         null=True,
         blank=True
     )
-    
+
     class Meta:
         verbose_name = _('Responsability')
         verbose_name_plural = _('Responsabilities')

@@ -73,15 +73,15 @@
     }
 },
 {
-    "model": "responsability.type_of_responsability",
+    "model": "organization.responsability_type",
     "pk": 1,
     "fields": {
         "name": "President",
-        "description": "C\u00e0rrec fonamental en associaci\u00f3"
+        "description": "C\u00e0rrec essencial per l'associaci\u00f3"
     }
 },
 {
-    "model": "responsability.type_of_responsability",
+    "model": "organization.responsability_type",
     "pk": 2,
     "fields": {
         "name": "Vicepresident",
@@ -89,58 +89,34 @@
     }
 },
 {
-    "model": "responsability.type_of_responsability",
+    "model": "organization.responsability_type",
     "pk": 3,
     "fields": {
         "name": "Tresorer",
-        "description": "C\u00e0rrec fonamental en associaci\u00f3"
+        "description": "C\u00e0rrec essencial per l'associaci\u00f3"
     }
 },
 {
-    "model": "responsability.type_of_responsability",
-    "pk": 4,
-    "fields": {
-        "name": "Vocalia de suport a tresoreria",
-        "description": ""
-    }
-},
-{
-    "model": "responsability.type_of_responsability",
+    "model": "organization.responsability_type",
     "pk": 5,
     "fields": {
         "name": "Secretari",
-        "description": "C\u00e0rrec fonamental en associaci\u00f3"
+        "description": "C\u00e0rrec essencial per l'associaci\u00f3"
     }
 },
 {
-    "model": "responsability.type_of_responsability",
+    "model": "organization.responsability_type",
     "pk": 6,
     "fields": {
-        "name": "Vocalia 1",
+        "name": "Vocalia",
         "description": ""
     }
 },
 {
-    "model": "responsability.type_of_responsability",
-    "pk": 7,
-    "fields": {
-        "name": "Vocalia 2",
-        "description": ""
-    }
-},
-{
-    "model": "responsability.type_of_responsability",
-    "pk": 8,
-    "fields": {
-        "name": "Vocalia 3",
-        "description": ""
-    }
-},
-{
-    "model": "responsability.type_of_responsability",
+    "model": "organization.responsability_type",
     "pk": 9,
     "fields": {
-        "name": "Projecte",
+        "name": "Equip de treball",
         "description": ""
     }
 },

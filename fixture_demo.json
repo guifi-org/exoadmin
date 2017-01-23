@@ -176,11 +176,11 @@
     }
 },
 {
-    "model": "responsability.responsability",
+    "model": "organization.responsability",
     "pk": 1,
     "fields": {
         "active": true,
-        "type_of_responsability": 1,
+        "responsability_type": 1,
         "title": "President 1",
         "description": "",
         "notes": "",
@@ -192,11 +192,11 @@
     }
 },
 {
-    "model": "responsability.responsability",
+    "model": "organization.responsability",
     "pk": 2,
     "fields": {
         "active": true,
-        "type_of_responsability": 9,
+        "responsability_type": 9,
         "title": "Desplegament IPv6",
         "description": "",
         "notes": "",

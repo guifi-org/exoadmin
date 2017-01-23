@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'subscription',
     'inventory',
     'netinterface',
-    'responsability',
+    'organization',
     'activity',
 ]
 
