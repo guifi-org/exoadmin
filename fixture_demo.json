@@ -143,7 +143,7 @@
     "pk": 1,
     "fields": {
         "ip": "10.0.1.1",
-	"cidr": "8"
+	"netprefix": "8"
     }
 },
 {
@@ -157,7 +157,7 @@
     "model": "netinterface.network_interface",
     "pk": 1,
     "fields": {
-        "ip": "10.0.0.1",
+        "ip": 1,
 	"subscriber": 1,
         "network_interface_protocol": 1,
         "local_address": null,
@@ -168,7 +168,7 @@
     "model": "netinterface.network_interface",
     "pk": 2,
     "fields": {
-        "ip": "10.0.0.2",
+        "ip": 2,
 	"subscriber": 2,
         "network_interface_protocol": 3,
         "local_address": null,

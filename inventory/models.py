@@ -10,9 +10,9 @@ class IP(models.Model):
             help_text=_('Can be IPv4 or IPv6'),
          )
 
-    cidr = models.PositiveIntegerField(
-            _('CIDR'),
-            help_text=_('Put a number if you want more than one IP'),
+    netprefix = models.PositiveIntegerField(
+            _('Network prefix'),
+            help_text=_('Bits of network prefix if you want a CIDR notation address'),
             null=True,
             blank=True,
          )
@@ -22,8 +22,8 @@ class IP(models.Model):
         verbose_name_plural = 'IPs'
 
     def __str__(self):
-        if (self.cidr):
-            return "{}/{}".format(self.ip, self.cidr)
+        if (self.netprefix):
+            return "{}/{}".format(self.ip, self.netprefix)
         else: 
             return "{}".format(self.ip)
 
