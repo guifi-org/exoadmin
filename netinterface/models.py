@@ -94,4 +94,5 @@ class Network_interface(models.Model):
                 break
         # src http://stackoverflow.com/questions/6117733/negation-in-python/6117762#6117762
         if not verified:
-            raise ValidationError(_('IP does not belong to any existing Network or IP in Inventory'))
+            # src http://stackoverflow.com/questions/6333738/django-how-to-specify-which-field-a-validation-fails-on/6347281#6347281
+            raise ValidationError({'ip': [_('IP does not belong to any existing Network or IP in Inventory')]})
