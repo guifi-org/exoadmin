@@ -26,7 +26,7 @@ class Place(models.Model):
     )
 
     name = models.CharField(
-        _('name'),
+        _('Place'),
         max_length=50,
         unique=True
     )
