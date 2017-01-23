@@ -19,3 +19,4 @@ class SubscriberAdmin(admin.ModelAdmin):
     inlines = (NetinterfaceInline,)
     list_display = ('identity', 'service', 'active', 'end_date')
     list_filter = ('active', 'service')
+    raw_id_fields = ('identity',)

@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 class IdentifiedAdmin(admin.ModelAdmin):
     list_display = ('user', 'get_first_name', 'get_last_name', 'user_type')
     list_filter = ('user_type',)
+    raw_id_fields = ('user',)
 
     # src http://stackoverflow.com/questions/163823/can-list-display-in-a-django-modeladmin-display-attributes-of-foreignkey-field
     def get_first_name(self, obj):
