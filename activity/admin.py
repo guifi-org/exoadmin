@@ -2,8 +2,8 @@ from django.contrib import admin
 
 from . import models
 
-@admin.register(models.Type_of_activity)
-class Type_of_activity_Admin(admin.ModelAdmin):
+@admin.register(models.Activity_type)
+class Activity_type_Admin(admin.ModelAdmin):
     list_display = ('name', 'description')
 
 @admin.register(models.Activity)

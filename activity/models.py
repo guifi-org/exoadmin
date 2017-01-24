@@ -5,7 +5,7 @@ from django.utils.translation import gettext as _
 import datetime
 
 # talk, workshop, installation, deployment
-class Type_of_activity(models.Model):
+class Activity_type(models.Model):
 
     name = models.CharField (
         _('Name'),
@@ -19,8 +19,8 @@ class Type_of_activity(models.Model):
     )
 
     class Meta:
-        verbose_name = _('Type of activity')
-        verbose_name_plural = _('Type of activities')
+        verbose_name = _('Activity type')
+        verbose_name_plural = _('Activity types')
 
     def __str__(self):
         return self.name
@@ -35,9 +35,9 @@ class Activity(models.Model):
         ),
     )
 
-    type_of_activity = models.ForeignKey(
-        'Type_of_activity',
-        verbose_name=_('Type of activity'),
+    activity_type = models.ForeignKey(
+        'Activity_type',
+        verbose_name=_('Activity type'),
         on_delete=models.CASCADE,
     )
 
