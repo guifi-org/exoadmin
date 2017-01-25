@@ -4,6 +4,83 @@ from django.utils.translation import gettext as _
 
 import datetime
 
+class Material(models.Model):
+
+    activity = models.ForeignKey(
+        'Activity',
+        verbose_name=_('Activity'),
+        on_delete=models.CASCADE,
+    )
+
+    material = models.CharField (
+        _('Material'),
+        max_length=50,
+    )
+
+    cost = models.FloatField (
+        _('Cost (€)'),
+        help_text=_('0 is free or donation'),
+    )
+
+    date = models.DateField(
+        ('Date'),
+        default=datetime.date.today,
+    )
+
+    comments = models.CharField (
+        _('Comments'),
+        max_length=50,
+        blank=True,
+    )
+
+    class Meta:
+        verbose_name = _('Material')
+        verbose_name_plural = _('Materials')
+
+    def __str__(self):
+        return self.material
+
+class Task(models.Model):
+
+    activity = models.ForeignKey(
+        'Activity',
+        verbose_name=_('Activity'),
+        on_delete=models.CASCADE,
+    )
+
+    task = models.CharField (
+        _('Task'),
+        max_length=50,
+    )
+
+    time = models.FloatField (
+        _('Time (hours)'),
+    )
+
+    identity = models.ForeignKey(
+        'identity.Identity',
+        verbose_name=_('Identity'),
+        on_delete=models.CASCADE,
+    )
+
+    date = models.DateField(
+        ('Date'),
+        default=datetime.date.today,
+    )
+
+    comments = models.CharField (
+        _('Comments'),
+        max_length=50,
+        blank=True,
+    )
+
+    class Meta:
+        verbose_name = _('Task')
+        verbose_name_plural = _('Tasks')
+
+    def __str__(self):
+        return self.task
+
 # talk, workshop, installation, deployment
 class Activity_type(models.Model):
 
@@ -52,44 +129,33 @@ class Activity(models.Model):
         blank=True,
     )
 
-    identities = models.ManyToManyField(
-        'identity.Identity',
-        verbose_name = _('Identities'),
-    )
-
-    time = models.FloatField (
-        _('Time in hours'),
-        blank=True,
-    )
-
-    time_notes = models.TextField (
-        _('Time description'),
+    comments = models.TextField (
+        _('Comments'),
         max_length=300,
         blank=True,
     )
 
-    money = models.FloatField (
-        _('Money in €'),
-        blank=True,
-        null=True,
-    )
+#    identities = models.ManyToManyField(
+#        'identity.Identity',
+#        verbose_name = _('Identities'),
+#    )
 
-    money_notes = models.TextField (
-        _('Money description'),
-        max_length=300,
-        blank=True,
-    )
 
-    start_date = models.DateField(
-        ('Start activity'),
-        default=datetime.date.today,
-    )
+    # TODO this should be autocalculated from inlines entries
+    # http://stackoverflow.com/questions/24603874/how-can-i-total-up-the-sum-of-all-prices-in-django-admin
+    # non editable?
+#    time = models.FloatField (
+#        _('Time in hours'),
+#        default=0,
+#        editable=False,
+#    )
+#
+#    money = models.FloatField (
+#        _('Money in €'),
+#        default=0
+#        editable=False,
+#    )
 
-    end_date = models.DateField(
-        ('End activity'),
-        null=True,
-        blank=True,
-    )
 
     class Meta:
         verbose_name = _('Activity')
