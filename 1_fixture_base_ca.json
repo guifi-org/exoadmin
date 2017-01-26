@@ -1,8 +1,8 @@
 [
-{                                                                                                   
+{
     "model": "auth.user",
     "pk": 10,
-    "fields": {                                                                                     
+    "fields": {
         "password": "pbkdf2_sha256$30000$2JQKOFMUNtUy$OQIKWZDJS1e8lIToEYkNi/sRUAUqX+S1ulirkel1sl4=",
         "last_login": "2017-01-18T01:08:17.883Z",
         "is_superuser": true,

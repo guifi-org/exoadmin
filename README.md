@@ -15,9 +15,9 @@ cd exoadmin
 virtualenv env
 source env/bin/activate
 pip3 install django pyparsing pydot django-extensions
-python3 manage.py loaddata fixture_base.json
+python3 manage.py loaddata 1_fixture_base_ca.json
 # add next line if you want to test with fake data
-python3 manage.py loaddata fixture_demo.json
+python3 manage.py loaddata 2_fixture_demo_ca.json
 python3 manage.py makemigrations
 python3 manage.py migrate
 python3 manage.py runserver
