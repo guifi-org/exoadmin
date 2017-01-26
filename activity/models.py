@@ -121,6 +121,7 @@ class Activity(models.Model):
     title = models.CharField (
         _('Title'),
         max_length=50,
+        unique=True,
     )
 
     description = models.TextField (
