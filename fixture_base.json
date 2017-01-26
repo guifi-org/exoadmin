@@ -121,7 +121,7 @@
     }
 },
 {
-    "model": "activity.activity_type",
+    "model": "activity.type",
     "pk": 1,
     "fields": {
         "name": "Xerrada",
@@ -129,7 +129,7 @@
     }
 },
 {
-    "model": "activity.activity_type",
+    "model": "activity.type",
     "pk": 2,
     "fields": {
         "name": "Taller",
@@ -137,7 +137,7 @@
     }
 },
 {
-    "model": "activity.activity_type",
+    "model": "activity.type",
     "pk": 3,
     "fields": {
         "name": "Curs",
@@ -145,7 +145,7 @@
     }
 },
 {
-    "model": "activity.activity_type",
+    "model": "activity.type",
     "pk": 4,
     "fields": {
         "name": "Instal\u00b7laci\u00f3",
@@ -153,7 +153,7 @@
     }
 },
 {
-    "model": "activity.activity_type",
+    "model": "activity.type",
     "pk": 6,
     "fields": {
         "name": "Manteniment",
@@ -161,7 +161,7 @@
     }
 },
 {
-    "model": "activity.activity_type",
+    "model": "activity.type",
     "pk": 7,
     "fields": {
         "name": "Visita prova de cobertura",

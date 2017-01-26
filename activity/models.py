@@ -81,8 +81,8 @@ class Task(models.Model):
     def __str__(self):
         return self.task
 
-# talk, workshop, installation, deployment
-class Activity_type(models.Model):
+# types of activities and tasks
+class Type(models.Model):
 
     name = models.CharField (
         _('Name'),
@@ -96,8 +96,8 @@ class Activity_type(models.Model):
     )
 
     class Meta:
-        verbose_name = _('Activity type')
-        verbose_name_plural = _('Activity types')
+        verbose_name = _('Activity and task type')
+        verbose_name_plural = _('Activity and task types')
 
     def __str__(self):
         return self.name
@@ -113,7 +113,7 @@ class Activity(models.Model):
     )
 
     activity_type = models.ForeignKey(
-        'Activity_type',
+        'Type',
         verbose_name=_('Activity type'),
         on_delete=models.CASCADE,
     )

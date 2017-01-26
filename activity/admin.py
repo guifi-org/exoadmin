@@ -19,8 +19,8 @@ class TaskInline(admin.TabularInline):
     extra = 0
     raw_id_fields = ('identity',)
 
-@admin.register(models.Activity_type)
-class Activity_type_Admin(admin.ModelAdmin):
+@admin.register(models.Type)
+class TypeAdmin(admin.ModelAdmin):
     list_display = ('name', 'description')
 
 @admin.register(models.Activity)
