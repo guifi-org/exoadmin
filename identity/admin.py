@@ -4,7 +4,9 @@ from . import models
 
 from django.contrib.auth.models import User
 
-admin.site.register(models.Payment_method)
+@admin.register(models.Payment_method)
+class Payment_method_Admin(admin.ModelAdmin):
+    list_display = ('payment_method' , 'description',)
 
 @admin.register(models.Identity)
 class IdentifiedAdmin(admin.ModelAdmin):

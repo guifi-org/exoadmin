@@ -10,6 +10,12 @@ class Payment_method(models.Model):
         max_length=50
     )
 
+    description = models.TextField(
+        _('Description'),
+        max_length=300,
+        blank=True,
+    )
+
     class Meta:
         verbose_name = _('Payment method')
         verbose_name_plural = _('Payment methods')
