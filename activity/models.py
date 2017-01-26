@@ -116,6 +116,7 @@ class Activity(models.Model):
         'Type',
         verbose_name=_('Activity type'),
         on_delete=models.CASCADE,
+        default=1,
     )
 
     title = models.CharField (
