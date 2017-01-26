@@ -34,9 +34,9 @@ class ActivityAdmin(admin.ModelAdmin):
         # src http://stackoverflow.com/questions/24603874/how-can-i-total-up-the-sum-of-all-prices-in-django-admin
         # src https://docs.djangoproject.com/en/1.10/ref/models/querysets/#values-list
         return sum(models.Task.objects.filter(activity__id = instance.id).values_list('time', flat=True))
-    time_report.short_description = 'Time'
+    time_report.short_description = 'Spend time'
 
     def money_report(self, instance):
         return sum(models.Expense.objects.filter(activity__id = instance.id).values_list('cost', flat=True))
-    money_report.short_description = 'Money'
+    money_report.short_description = 'Expenses'
 
