@@ -66,7 +66,7 @@
         "place": 1,
         "postal_code": "12345",
         "user_type": "Individual",
-        "payment_means": "Direct Debit",
+        "payment_method": 1,
         "iban": ""
     }
 },
@@ -82,7 +82,7 @@
         "place": 1,
         "postal_code": "87654321",
         "user_type": "Individual",
-        "payment_means": "Cash",
+        "payment_method": 3,
         "iban": ""
     }
 },
@@ -98,7 +98,7 @@
         "place": 1,
         "postal_code": "372819",
         "user_type": "Organization",
-        "payment_means": "Direct Debit",
+        "payment_method": 1,
         "iban": ""
     }
 },

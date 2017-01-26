@@ -247,5 +247,33 @@
         "name": "Working",
         "description": "Used in production"
     }
+},
+{
+    "model": "identity.payment_method",
+    "pk": 1,
+    "fields": {
+        "payment_method": "Direct debit"
+    }
+},
+{
+    "model": "identity.payment_method",
+    "pk": 2,
+    "fields": {
+        "payment_method": "Periodic transfer"
+    }
+},
+{
+    "model": "identity.payment_method",
+    "pk": 3,
+    "fields": {
+        "payment_method": "Cash"
+    }
+},
+{
+    "model": "identity.payment_method",
+    "pk": 4,
+    "fields": {
+        "payment_method": "Paypal"
+    }
 }
 ]

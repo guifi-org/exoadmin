@@ -3,6 +3,20 @@ from django.db import models
 from django.utils.translation import gettext as _
 from django.contrib.auth.models import User
 
+class Payment_method(models.Model):
+
+    payment_method = models.CharField(
+        _('Payment method'),
+        max_length=50
+    )
+
+    class Meta:
+        verbose_name = _('Payment method')
+        verbose_name_plural = _('Payment methods')
+
+    def __str__(self):
+        return self.payment_method
+
 class Identity(models.Model):
 
     # src https://docs.djangoproject.com/en/1.10/topics/auth/customizing/#extending-the-existing-user-model
@@ -41,6 +55,8 @@ class Identity(models.Model):
     # src http://stackoverflow.com/questions/12725720/django-choices-how-to-set-default-option
     # src https://docs.djangoproject.com/en/dev/ref/forms/fields/#choicefield
     # src http://stackoverflow.com/questions/4274243/django-print-choices-value
+    # how to prepare choices for translation
+    # src http://stackoverflow.com/questions/16088849/how-to-translate-dynamic-form-choices/16088999#16088999
     USER_TYPE = (
         ('Individual', _('Individual')),
         ('Organization', _('Organization')),
@@ -52,22 +68,27 @@ class Identity(models.Model):
          default='Individual'
     )
 
-    # how to prepare choices for translation
-    # src http://stackoverflow.com/questions/16088849/how-to-translate-dynamic-form-choices/16088999#16088999
     # [cat] formes de pagament
-    PAYMENT_MEANS = (
-        # [cat] domiciliació bancària
-        ('Direct Debit', _('Direct Debit')),
-        # [cat] transferència periòdica
-        ('Periodic Transfer', _('Periodic Transfer')),
-        # [cat] metàl·lic
-        ('Cash', _('Cash')),
-    )
-    payment_means = models.CharField(
-        _('Payment means'),
-        max_length=20,
-        choices=PAYMENT_MEANS,
-        default='Direct Debit'
+#    PAYMENT_MEANS = (
+#        # [cat] domiciliació bancària
+#        ('Direct Debit', _('Direct Debit')),
+#        # [cat] transferència periòdica
+#        ('Periodic Transfer', _('Periodic Transfer')),
+#        # [cat] metàl·lic
+#        ('Cash', _('Cash')),
+#    )
+#    payment_means = models.CharField(
+#        _('Payment means'),
+#        max_length=20,
+#        choices=PAYMENT_MEANS,
+#        default='Direct Debit'
+#    )
+
+    payment_method = models.ForeignKey(
+        'Payment_method',
+        verbose_name=_('Payment method'),
+        on_delete=models.CASCADE,
+        default=1,
     )
 
     # TODO check https://en.wikipedia.org/wiki/International_Bank_Account_Number#Structure

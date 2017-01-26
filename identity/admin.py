@@ -4,6 +4,8 @@ from . import models
 
 from django.contrib.auth.models import User
 
+admin.site.register(models.Payment_method)
+
 @admin.register(models.Identity)
 class IdentifiedAdmin(admin.ModelAdmin):
     list_display = ('user', 'get_first_name', 'get_last_name', 'user_type')
