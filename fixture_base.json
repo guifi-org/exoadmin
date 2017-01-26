@@ -124,7 +124,7 @@
     "model": "activity.type",
     "pk": 1,
     "fields": {
-        "name": "Xerrada",
+        "name": "Altres",
         "description": ""
     }
 },
@@ -164,7 +164,15 @@
     "model": "activity.type",
     "pk": 7,
     "fields": {
-        "name": "Visita prova de cobertura",
+        "name": "Prova de cobertura",
+        "description": "Visita de prova de cobertura"
+    }
+},
+{
+    "model": "activity.type",
+    "pk": 8,
+    "fields": {
+        "name": "Xerrada",
         "description": ""
     }
 },
