@@ -4,7 +4,10 @@ from . import models
 
 admin.site.register(models.Expense_type)
 admin.site.register(models.Expense)
-admin.site.register(models.Task)
+
+@admin.register(models.Task)
+class TaskAdmin(admin.ModelAdmin):
+    list_display = ('task_type', 'identity', 'time', 'comments', 'date',)
 
 class ExpenseInline(admin.TabularInline):
     model = models.Expense
