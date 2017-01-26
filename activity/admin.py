@@ -1,11 +1,6 @@
 from django.contrib import admin
 
 from . import models
-#from .models import Task
-#from .models import Material
-#from activity.models import *
-#from activity.models import Task
-#from activity.models import Material
 
 admin.site.register(models.Expense_type)
 admin.site.register(models.Expense)
@@ -26,7 +21,6 @@ class TypeAdmin(admin.ModelAdmin):
 
 @admin.register(models.Activity)
 class ActivityAdmin(admin.ModelAdmin):
-#    filter_horizontal = ('identities',)
     inlines = (TaskInline, ExpenseInline,)
     readonly_fields = ('time_report','money_report',)
 
@@ -39,4 +33,3 @@ class ActivityAdmin(admin.ModelAdmin):
     def money_report(self, instance):
         return sum(models.Expense.objects.filter(activity__id = instance.id).values_list('cost', flat=True))
     money_report.short_description = 'Expenses (€)'
-

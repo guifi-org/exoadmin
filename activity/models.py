@@ -160,28 +160,6 @@ class Activity(models.Model):
         blank=True,
     )
 
-#    identities = models.ManyToManyField(
-#        'identity.Identity',
-#        verbose_name = _('Identities'),
-#    )
-
-
-    # TODO this should be autocalculated from inlines entries
-    # http://stackoverflow.com/questions/24603874/how-can-i-total-up-the-sum-of-all-prices-in-django-admin
-    # non editable?
-#    time = models.FloatField (
-#        _('Time in hours'),
-#        default=0,
-#        editable=False,
-#    )
-#
-#    money = models.FloatField (
-#        _('Money in €'),
-#        default=0
-#        editable=False,
-#    )
-
-
     class Meta:
         verbose_name = _('Activity')
         verbose_name_plural = _('Activities')

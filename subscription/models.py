@@ -49,7 +49,7 @@ class Subscriber(models.Model):
         on_delete=models.CASCADE
     )
 
-    # TODO: check on data entry that start_subs should be greater than end_subs
+    # TODO: check on data entry that start_subs should be greater or equal than end_subs
     # src http://stackoverflow.com/questions/2029295/django-datefield-default-options/2030142#2030142
     start_date = models.DateField(
         _('Start subscription date'),
@@ -64,13 +64,6 @@ class Subscriber(models.Model):
         blank=True
     )
 
-    #interfaces = models.ForeignKey(
-    #    'netinterface.Network_interface',
-    #    verbose_name = _('Network Interfaces'),
-    #    blank=True,
-    #    null=True,
-    #)
-
     notes = models.TextField(
         _('Notes'),
         max_length=300,
@@ -83,4 +76,3 @@ class Subscriber(models.Model):
 
     def __str__(self):
         return "{} - {}".format(self.identity, self.service)
-        #return self.identity.user.username

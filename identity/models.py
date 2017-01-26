@@ -68,22 +68,6 @@ class Identity(models.Model):
          default='Individual'
     )
 
-    # [cat] formes de pagament
-#    PAYMENT_MEANS = (
-#        # [cat] domiciliació bancària
-#        ('Direct Debit', _('Direct Debit')),
-#        # [cat] transferència periòdica
-#        ('Periodic Transfer', _('Periodic Transfer')),
-#        # [cat] metàl·lic
-#        ('Cash', _('Cash')),
-#    )
-#    payment_means = models.CharField(
-#        _('Payment means'),
-#        max_length=20,
-#        choices=PAYMENT_MEANS,
-#        default='Direct Debit'
-#    )
-
     payment_method = models.ForeignKey(
         'Payment_method',
         verbose_name=_('Payment method'),
