@@ -7,11 +7,11 @@ from . import models
 #from activity.models import Task
 #from activity.models import Material
 
-admin.site.register(models.Material)
+admin.site.register(models.Expense)
 admin.site.register(models.Task)
 
-class MaterialInline(admin.TabularInline):
-    model = models.Material
+class ExpenseInline(admin.TabularInline):
+    model = models.Expense
     extra = 0
 
 class TaskInline(admin.TabularInline):
@@ -26,7 +26,7 @@ class TypeAdmin(admin.ModelAdmin):
 @admin.register(models.Activity)
 class ActivityAdmin(admin.ModelAdmin):
 #    filter_horizontal = ('identities',)
-    inlines = (TaskInline, MaterialInline,)
+    inlines = (TaskInline, ExpenseInline,)
     readonly_fields = ('time_report','money_report',)
 
     def time_report(self, instance):

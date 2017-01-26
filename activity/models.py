@@ -4,7 +4,7 @@ from django.utils.translation import gettext as _
 
 import datetime
 
-class Material(models.Model):
+class Expense(models.Model):
 
     activity = models.ForeignKey(
         'Activity',
@@ -34,11 +34,11 @@ class Material(models.Model):
     )
 
     class Meta:
-        verbose_name = _('Material')
-        verbose_name_plural = _('Materials')
+        verbose_name = _('Expense')
+        verbose_name_plural = _('Expenses')
 
     def __str__(self):
-        return self.material
+        return self.expense_type.name
 
 class Task(models.Model):
 
