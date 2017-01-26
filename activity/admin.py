@@ -23,6 +23,8 @@ class TypeAdmin(admin.ModelAdmin):
 class ActivityAdmin(admin.ModelAdmin):
     inlines = (TaskInline, ExpenseInline,)
     readonly_fields = ('time_report','money_report',)
+    list_display = ('title', 'activity_type', 'time_report', 'money_report')
+    search_fields = ('title',)
 
     def time_report(self, instance):
         # src http://stackoverflow.com/questions/24603874/how-can-i-total-up-the-sum-of-all-prices-in-django-admin
