@@ -2,12 +2,18 @@ from django.contrib import admin
 
 from . import models
 
-admin.site.register(models.Expense_type)
-admin.site.register(models.Expense)
+@admin.register(models.Expense_type)
+class Expense_type_Admin(admin.ModelAdmin):
+    list_display = ('name', 'description')
+
+
+@admin.register(models.Expense)
+class Expense(admin.ModelAdmin):
+    list_display = ('activity', 'expense_type', 'cost', 'comments', 'date',)
 
 @admin.register(models.Task)
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ('task_type', 'identity', 'time', 'comments', 'date',)
+    list_display = ('activity', 'task_type', 'identity', 'time', 'comments', 'date',)
 
 class ExpenseInline(admin.TabularInline):
     model = models.Expense
