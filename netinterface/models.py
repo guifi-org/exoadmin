@@ -37,8 +37,8 @@ class Network_interface(models.Model):
 
     # ip assignment must be unique
     ip = models.GenericIPAddressField(
-        _('IP address'),
-#        help_text=_('Assigned IP address to subscription'),
+        _('Public IP address'),
+        help_text=_('reachable from Internet'),
         unique = True,
     )
 
