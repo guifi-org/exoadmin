@@ -177,6 +177,14 @@
     }
 },
 {
+    "model": "activity.expense_type",
+    "pk": 1,
+    "fields": {
+        "name": "Altres",
+        "description": ""
+    }
+},
+{
     "model": "inventory.item_type",
     "pk": 1,
     "fields": {

@@ -4,7 +4,36 @@ from django.utils.translation import gettext as _
 
 import datetime
 
+class Expense_type(models.Model):
+
+    name = models.CharField (
+        _('Name'),
+        max_length=50,
+    )
+
+    description = models.TextField (
+        _('Description'),
+        max_length=300,
+        blank=True,
+    )
+
+    class Meta:
+        verbose_name = _('Expense type')
+        verbose_name_plural = _('Expense types')
+
+    def __str__(self):
+        return self.name
+
 class Expense(models.Model):
+
+    date = models.DateField(
+        ('Date'),
+        default=datetime.date.today,
+    )
+
+    cost = models.FloatField (
+        _('Cost (€)'),
+    )
 
     activity = models.ForeignKey(
         'Activity',
@@ -12,19 +41,11 @@ class Expense(models.Model):
         on_delete=models.CASCADE,
     )
 
-    material = models.CharField (
-        _('Material'),
-        max_length=50,
-    )
-
-    cost = models.FloatField (
-        _('Cost (€)'),
-        help_text=_('0 is free or donation'),
-    )
-
-    date = models.DateField(
-        ('Date'),
-        default=datetime.date.today,
+    expense_type = models.ForeignKey (
+        'Expense_type',
+        verbose_name=_('Expense type'),
+        on_delete=models.CASCADE,
+        default=1,
     )
 
     comments = models.CharField (

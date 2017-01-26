@@ -7,6 +7,7 @@ from . import models
 #from activity.models import Task
 #from activity.models import Material
 
+admin.site.register(models.Expense_type)
 admin.site.register(models.Expense)
 admin.site.register(models.Task)
 
