@@ -208,23 +208,92 @@
     }
 },
 {
+    "model": "activity.expense_type",
+    "pk": 1,
+    "fields": {
+        "name": "Altres",
+        "description": ""
+    }
+},
+{
+    "model": "activity.expense_type",
+    "pk": 2,
+    "fields": {
+        "name": "Material",
+        "description": ""
+    }
+},
+{
+    "model": "activity.expense_type",
+    "pk": 2,
+    "fields": {
+        "name": "Menjar",
+        "description": ""
+    }
+},
+{
+    "model": "activity.expense_type",
+    "pk": 3,
+    "fields": {
+        "name": "Transport",
+        "description": ""
+    }
+},
+{
+    "model": "activity.expense",
+    "pk": 1,
+    "fields": {
+        "date": "2017-01-26",
+        "cost": 400.0,
+        "activity": 1,
+        "expense_type": 1,
+        "comments": "2 torpedos"
+    }
+},
+{
+    "model": "activity.expense",
+    "pk": 2,
+    "fields": {
+        "date": "2017-01-26",
+        "cost": 950.0,
+        "activity": 1,
+        "expense_type": 1,
+        "comments": "250 metres de fibra \u00f2ptica"
+    }
+},
+{
+    "model": "activity.task",
+    "pk": 1,
+    "fields": {
+        "date": "2017-01-26",
+        "time": 4.0,
+        "activity": 1,
+        "task_type": 4,
+        "identity": 2,
+        "comments": "Muntatge de torpedos"
+    }
+},
+{
+    "model": "activity.task",
+    "pk": 2,
+    "fields": {
+        "date": "2017-01-26",
+        "time": 2.0,
+        "activity": 1,
+        "task_type": 4,
+        "identity": 1,
+        "comments": "Tirada de cable"
+    }
+},
+{
     "model": "activity.activity",
     "pk": 1,
     "fields": {
         "accounted": true,
-        "type_of_activity": 4,
-        "title": "Instal\u00b7laci\u00f3 a Centre Esportiu",
+        "activity_type": 1,
+        "title": "Primera instal\u00b7laci\u00f3 de fibra \u00f2ptica a Barcelona",
         "description": "",
-        "time": 60.0,
-        "time_notes": "10: disseny\r\n40: implementaci\u00f3\r\n10: verificaci\u00f3",
-        "money": 6000.0,
-        "money_notes": "La factura est\u00e0 a l'adre\u00e7a https://nextcloud.exo.cat/file/234892.pdf",
-        "start_date": "2017-01-18",
-        "end_date": null,
-        "identities": [
-            1,
-            3
-        ]
+        "comments": ""
     }
 }
 ]
