@@ -63,30 +63,32 @@ class Expense(models.Model):
 
 class Task(models.Model):
 
-    activity = models.ForeignKey(
-        'Activity',
-        verbose_name=_('Activity'),
-        on_delete=models.CASCADE,
-    )
-
-    task = models.CharField (
-        _('Task'),
-        max_length=50,
+    date = models.DateField(
+        ('Date'),
+        default=datetime.date.today,
     )
 
     time = models.FloatField (
         _('Time (hours)'),
     )
 
+    activity = models.ForeignKey(
+        'Activity',
+        verbose_name=_('Activity'),
+        on_delete=models.CASCADE,
+    )
+
+    task_type = models.ForeignKey(
+        'Type',
+        verbose_name=_('Task type'),
+        on_delete=models.CASCADE,
+        default=1,
+    )
+
     identity = models.ForeignKey(
         'identity.Identity',
         verbose_name=_('Identity'),
         on_delete=models.CASCADE,
-    )
-
-    date = models.DateField(
-        ('Date'),
-        default=datetime.date.today,
     )
 
     comments = models.CharField (
@@ -100,7 +102,7 @@ class Task(models.Model):
         verbose_name_plural = _('Tasks')
 
     def __str__(self):
-        return self.task
+        return self.task_type.name
 
 # types of activities and tasks
 class Type(models.Model):
