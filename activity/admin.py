@@ -1,5 +1,7 @@
 from django.contrib import admin
 
+from django.utils.translation import gettext as _
+
 from . import models
 
 @admin.register(models.Expense_type)
@@ -28,9 +30,16 @@ class TaskInline(admin.TabularInline):
 class TypeAdmin(admin.ModelAdmin):
     list_display = ('name', 'description')
 
+def update_counters(self, request, queryset):
+    for obj in queryset:
+        obj.save()
+    self.message_user(request, _('Counters updated'))
+update_counters.short_description = _('Update time and cost counters')
+
 @admin.register(models.Activity)
 class ActivityAdmin(admin.ModelAdmin):
     inlines = (TaskInline, ExpenseInline,)
     readonly_fields = ('count_time', 'count_cost',)
     list_display = ('title', 'activity_type', 'count_time', 'count_cost')
     search_fields = ('title',)
+    actions = (update_counters,)
