@@ -70,6 +70,18 @@ class Subscriber(models.Model):
         blank=True,
     )
 
+    count_netifaces = models.IntegerField(
+        _('Number of interfaces'),
+        blank=True,
+        null=True,
+        editable=False,
+        help_text=_('To update this field you have to explicitly save this activity'),
+    )
+
+    def save(self):
+        self.count_netifaces = self.network_interface_set.count()
+        super(Subscriber, self).save()
+
     class Meta:
         verbose_name = _('Subscriber')
         verbose_name_plural = _('Subscribers')
